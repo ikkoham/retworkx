@@ -44,6 +44,17 @@ autodoc_default_options = {
 }
 autoclass_content = 'both'
 
+rst_prolog = """
+
+.. warning::
+
+    The documentation for retworkx has migrated to:
+
+    https://qiskit.org/documentation/retworkx
+
+    These docs will no longer be updated.
+"""
+
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'colorful'
 
