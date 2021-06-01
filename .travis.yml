@@ -19,9 +19,9 @@ script:
   - tox -epy
 stages:
   - name: Linux non-x86_64
-    if: tag IS blank
-  - name: deploy
     if: tag IS present
+  - name: deploy
+    if: tag IS blank
 
 jobs:
   fast_finish: true
@@ -91,7 +91,6 @@ jobs:
         - CIBW_TEST_REQUIRES="networkx testtools fixtures"
         - TWINE_USERNAME=retworkx-ci
         - CIBW_TEST_COMMAND="python -m unittest discover {project}/tests"
-      if: tag IS present
       script:
         - pip install -U twine importlib-metadata keyring cibuildwheel==1.11.1
         - cibuildwheel --output-dir wheelhouse
